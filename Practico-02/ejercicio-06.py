@@ -15,7 +15,6 @@ class Persona:
 
 
     def edad(self):
-        formato = "%d/%m/%Y %H:%M:%S"
         edad = (datetime.datetime.now() - self.nacimiento).days
         edad = int(edad / 365)
         return edad
