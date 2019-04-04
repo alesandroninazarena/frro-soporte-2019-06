@@ -12,8 +12,12 @@ class Persona:
         self.altura = altura
         self.dni = self.generar_dni()
 
+    def generar_dni(self):
+        dni = random.randrange(100000000)
+        return dni
 
-class Estudiante:
+
+class Estudiante(Persona):
 
     def __init__(self, nombre, edad, sexo, peso, altura, carrera, anio, cantidad_materias, cantidad_aprobadas):
         Persona.__init__(self, nombre, edad, sexo, peso, altura)
@@ -22,9 +26,6 @@ class Estudiante:
         self.cantidad_materias = cantidad_materias
         self.cantidad_aprobadas = cantidad_aprobadas
 
-    def generar_dni(self):
-        dni = random.randrange(100000000)
-        return dni
 
 
 def organizar_estudiantes(estudiantes):

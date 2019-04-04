@@ -23,7 +23,12 @@ class Persona:
         self.dni = self.generar_dni()
 
 
-class Estudiante:
+    def generar_dni(self):
+        dni = random.randrange(100000000)
+        return dni
+
+
+class Estudiante(Persona):
 
     def __init__(self, nombre, edad, sexo, peso, altura, carrera, anio, cantidad_materias, cantidad_aprobadas):
         Persona.__init__(self, nombre, edad, sexo, peso, altura)
@@ -31,11 +36,6 @@ class Estudiante:
         self.anio = anio
         self.cantidad_materias = cantidad_materias
         self.cantidad_aprobadas = cantidad_aprobadas
-
-
-    def generar_dni(self):
-        dni = random.randrange(100000000)
-        return dni
 
 
     def avance(self):
@@ -51,5 +51,7 @@ class Estudiante:
 estudiante = Estudiante("Juana", 23, 'M', 60, 1.62, "Ing. en Sistemas de Información", 2014, 38, 15)
 assert(estudiante.avance() == 39.47 and estudiante.edad_ingreso() == 18)
 
+estudiante = Estudiante("Carlos", 38, 'M', 80, 1.95, "Ing. en Sistemas de Información", 2005, 38, 27)
+assert(estudiante.avance() == 71.05 and estudiante.edad_ingreso() == 24)
 
 
