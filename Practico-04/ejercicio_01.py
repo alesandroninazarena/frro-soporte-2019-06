@@ -36,8 +36,8 @@ def Multiplicacion():
 
 
 def Division():
-    v1 = float(en.get())
-    v2 = float(en.get())
+    v1 = float(en1.get())
+    v2 = float(en2.get())
     try:
         resultado = v1 / v2
     except ZeroDivisionError:
