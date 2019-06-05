@@ -27,7 +27,6 @@ def Alta():
     root.enCiu.grid(column=1, row=1, sticky='ew', padx=5, pady=5)
     root.enCod.grid(column=1, row=2, sticky='ew', padx=5, pady=5)
     root.botAceptar.grid(column=1, row=3, sticky='ew', padx=5, pady=5)
-    root.mainloop()
 
 
 def CargarDatos(root):
@@ -52,7 +51,6 @@ def Modificar():
     root.labCod.grid(column=0, row=1, sticky='ew', padx=5, pady=5)
     root.enCod.grid(column=1, row=1, sticky='ew', padx=5, pady=5)
     root.botAceptar.grid(column=1, row=2, sticky='ew', padx=5, pady=5)
-    root.mainloop()
 
 
 def Editar(root):
