@@ -27,7 +27,6 @@ def Alta():
     root.enCiu.grid(column=1, row=1, sticky='ew', padx=5, pady=5)
     root.enCod.grid(column=1, row=2, sticky='ew', padx=5, pady=5)
     root.botAceptar.grid(column=1, row=3, sticky='ew', padx=5, pady=5)
-    root.mainloop()
 
 
 def CargarDatos(root):
@@ -52,7 +51,6 @@ def Modificar():
     root.labCod.grid(column=0, row=1, sticky='ew', padx=5, pady=5)
     root.enCod.grid(column=1, row=1, sticky='ew', padx=5, pady=5)
     root.botAceptar.grid(column=1, row=2, sticky='ew', padx=5, pady=5)
-    root.mainloop()
 
 
 def Editar(root):
@@ -80,7 +78,6 @@ InsertarDatos(app.treeview)
 app.btAlta=Button(app.marco, text='Alta', command=Alta)
 app.btBaja=Button(app.marco, text='Baja', command=Baja)
 app.btModif=Button(app.marco, text='Modificar', command=Modificar)
-app.marco.grid(column=0, row=0, padx=5, pady=5, sticky='nsew')
 app.treeview.grid(column=0, row=0, sticky="ew",columnspan=3, padx=5, pady=5)
 app.btAlta.grid(column=0, row=1, sticky="ew", padx=5, pady=5)
 app.btBaja.grid(column=1, row=1, sticky="ew", padx=5, pady=5)
