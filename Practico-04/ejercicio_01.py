@@ -7,7 +7,6 @@ from tkinter import *
 from tkinter import messagebox
 
 
-
 def Suma():
     v1 = float(en1.get())
     v2 = float(en2.get())
