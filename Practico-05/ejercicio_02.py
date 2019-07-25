@@ -34,8 +34,9 @@ class DatosSocio(object):
     def borrar_todos(self):
         socios = self.todos()
         for s in socios:
-            self.baja(s.id)
-        if len(socios):
+            self.session.delete(s)
+        self.session.commit()
+        if (len(socios) == 0):
             return True
         else:
             return False
@@ -58,6 +59,7 @@ class DatosSocio(object):
 
 
     def modificacion(self, socio):
+        self.session.query(Socio).filter_by(id=socio.id).update({Socio.dni:socio.dni, Socio.nombre:socio.nombre, Socio.apellido:socio.apellido})
         self.session.commit()
         return socio
 
