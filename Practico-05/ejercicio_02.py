@@ -34,8 +34,9 @@ class DatosSocio(object):
     def borrar_todos(self):
         socios = self.todos()
         for s in socios:
-            self.baja(s.id)
-        if len(socios):
+            self.session.delete(s)
+        self.session.commit()
+        if (len(socios) == 0):
             return True
         else:
             return False
@@ -48,18 +49,24 @@ class DatosSocio(object):
 
 
     def baja(self, idSocio):
-        soc = self.session.query(Socio).filter_by(id=idSocio).first()
-        if soc.id == idSocio:
+        soc = self.buscar(idSocio)
+        if soc is None:
+            return False
+        elif soc.id == idSocio:
             self.session.delete(soc)
             self.session.commit()
             return True
-        else:
-            return False
 
 
     def modificacion(self, socio):
-        self.session.commit()
+        soc = self.buscar(socio.id)
+        if soc is None:
+            return False
+        else:
+            self.session.query(Socio).filter_by(id=socio.id).update({Socio.dni:socio.dni, Socio.nombre:socio.nombre, Socio.apellido:socio.apellido})
+            self.session.commit()
         return socio
+
 
 
 
@@ -93,14 +100,18 @@ def pruebas():
     assert socio_3_modificado.apellido == 'Casan'
     assert socio_3_modificado.dni == 13264587
 
-    # todos
-    assert len(datos.todos()) == 2
-
     # borrar todos
     datos.borrar_todos()
     assert len(datos.todos()) == 0
+
+    # todos
+    assert len(datos.todos()) == 2
+
 
 
 
 if __name__ == '__main__':
     pruebas()
+
+
+

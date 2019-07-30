@@ -9,7 +9,7 @@ from sqlalchemy import Column, INTEGER, VARCHAR
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-
+from sqlalchemy import Column, INTEGER, VARCHAR
 
 
 Base = declarative_base()
