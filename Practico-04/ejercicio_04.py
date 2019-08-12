@@ -28,16 +28,13 @@ def Alta():
     root.enCod.grid(column=1, row=2, sticky='ew', padx=5, pady=5)
     root.botAceptar.grid(column=1, row=3, sticky='ew', padx=5, pady=5)
 
-
 def CargarDatos(root):
     app.treeview.insert('', 'end', text=root.enCiu.get(), values=root.enCod.get())
     root.destroy()
 
-
 def Baja():
     i = app.treeview.focus()
     app.treeview.delete(i)
-
 
 def Modificar():
     root = tkinter.Tk()
@@ -52,12 +49,10 @@ def Modificar():
     root.enCod.grid(column=1, row=1, sticky='ew', padx=5, pady=5)
     root.botAceptar.grid(column=1, row=2, sticky='ew', padx=5, pady=5)
 
-
 def Editar(root):
     i = app.treeview.focus()
     app.treeview.item(i, values=root.enCod.get())
     root.destroy()
-
 
 def InsertarDatos(treeview):
         ciudades = ['Rosario', 'Buenos Aires', 'Pergamino', 'Cordoba', 'Basavilbaso']
