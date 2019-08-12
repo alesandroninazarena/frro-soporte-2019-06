@@ -12,7 +12,6 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import Column, INTEGER, VARCHAR
 
 
-
 Base = declarative_base()
 
 
