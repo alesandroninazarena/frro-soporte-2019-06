@@ -65,7 +65,7 @@ class DatosSocio(object):
         else:
             self.session.query(Socio).filter_by(id=socio.id).update({Socio.dni:socio.dni, Socio.nombre:socio.nombre, Socio.apellido:socio.apellido})
             self.session.commit()
-            return socio
+            return True
 
 
 
