@@ -100,7 +100,6 @@ class NegocioSocio(object):
         else:
             raise DniRepetido
 
-
     def regla_2(self, socio):
         """
         Validar que el nombre y el apellido del socio cuenten con mas de 3 caracteres pero menos de 15.
@@ -115,7 +114,6 @@ class NegocioSocio(object):
                 raise LongitudInvalida
         else:
             raise LongitudInvalida
-
 
     def regla_3(self):
         """
